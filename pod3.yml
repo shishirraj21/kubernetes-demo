@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod3
+spec:
+  containers:
+  - name: mypod3
+    image: nginx
+    volumeMounts:
+    - name: mypod3-storage
+      mountPath: /etc/config
+  volumes:
+  - name: mypod3-storage
+    configMap:
+      name: configmap3
+  
+  
